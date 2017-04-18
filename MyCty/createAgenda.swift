@@ -20,6 +20,11 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     
+    @IBOutlet weak var event: UITextField!
+    
+    @IBOutlet weak var cost: UITextField!
+    @IBOutlet weak var details: UITextView!
+    
     @IBAction func createAgenda(_ sender: Any) {
       
         if categoryTextField.text != "" && descriptionField.text != "" && timeTextField.text != "" && dateTextField.text != "" {
@@ -61,7 +66,8 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         
         let post: Dictionary<String, AnyObject> = [
             
-            "userID": userID as AnyObject  ,"category": categoryTextField.text! as AnyObject, "date": dateTextField.text! as AnyObject, "description": descriptionField.text! as AnyObject, "time": timeTextField.text! as AnyObject
+            "userID": userID as AnyObject  ,"category": categoryTextField.text! as AnyObject, "date": dateTextField.text! as AnyObject, "description": descriptionField.text! as AnyObject, "time": timeTextField.text! as AnyObject, "event": event.text! as AnyObject, "location": locationTextField.text! as AnyObject, "details": details.text as AnyObject, "cost": cost.text as AnyObject
+            
         ]
         
         let userPost = DataService.ds.Ref_Users.child(userID!)
@@ -70,11 +76,11 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         let firebasePost = DataService.ds.Ref_Agendas.childByAutoId()
         firebasePost.setValue(post)
         
-        
         categoryTextField.text = ""
         descriptionField.text = ""
         timeTextField.text = ""
         dateTextField.text = ""
+        event.text = ""
         
     }
     override func viewDidLoad() {

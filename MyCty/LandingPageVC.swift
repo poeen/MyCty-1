@@ -19,13 +19,40 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     //var testingKey = "237895837hfjskdlfjkld3" //only used for testing - need user key
     var agendas = [Agenda]()
     var selectedCell = "" as AnyObject
+    var menuShowing = false
+
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
+    
+    @IBAction func openMenu(_ sender: Any) {
+        
+        if (menuShowing){
+            leadingConstraint.constant = 0
+            
+        } else{
+            leadingConstraint.constant = 180
+        }
+        menuShowing = !menuShowing
+    }
+    
+ 
+    @IBAction func switchToCreate(_ sender: Any) {
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "AgendaDetailVC")
+        self.present(vc, animated: true, completion: nil)
+    }
+   
+    
+    
+    
+    
     
     //TODO: Setup user in Userdefaults or keychain to be used in Firebase query
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.dataSource = self
         myTableView.delegate = self
-    
+
+            
         navBar.barTintColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
         
         //retrieve Firebase Data
@@ -75,14 +102,19 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     
-    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let rowIndex: NSIndexPath = myTableView.indexPathForSelectedRow! as NSIndexPath
-        let selectedRow: UITableViewCell = myTableView.cellForRow(at: rowIndex as IndexPath)!
-        let contentFromSelectedRow: String = selectedRow.textLabel!.text!
+        let selectedRow: MyCustomTableViewCell = myTableView.cellForRow(at: rowIndex as IndexPath)! as! MyCustomTableViewCell
+        //let contentFromSelectedRow: String = selectedRow.textLabel!.text!
         
         if let secondVC = segue.destination as? FullAgendaView {
             if segue.identifier == "Preview" {
-            secondVC.categorytext = ("This")
+            secondVC.categoryText = selectedRow.categoryLabel.text
+                secondVC.timeText = selectedRow.time.text
+            secondVC.descriptionText = selectedRow.descriptionLabel.text
+            secondVC.dateText = selectedRow.bigDateLabel.text
+    
+                
             }
         }
     }

@@ -27,21 +27,27 @@ class FullAgendaView: UIViewController{
  
     @IBOutlet weak var details: UITextView!
     
+    @IBOutlet weak var rating: RatingControl!
    
     //var product = DataService.ds.Ref_Agendas.child("Agendas/id")
-    var categorytext :String?
+    var categoryText :String?
     var handle :FIRDatabaseHandle?
-    var agenda = [Agenda]()
-   
- 
-
-
+    var agenda: Agenda!
+    var timeText: String?
+    var dateText: String?
+    var descriptionText: String?
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        category.text = categorytext
+        category.text = categoryText
+        time.text = timeText
+        date.text = dateText
+        descriptionLbl.text = descriptionText
+        
+
             //print(category.text)
                     // Make our jokes array for the tableView.
-}
+    }
 }

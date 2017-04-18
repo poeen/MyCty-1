@@ -15,6 +15,7 @@ class MyCustomTableViewCell: UITableViewCell{
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var bigDateLabel: UILabel!
 
+    @IBOutlet weak var ratings: RatingControl!
     @IBOutlet weak var greenView: UIView!
     var agenda: Agenda!
     
@@ -36,7 +37,7 @@ class MyCustomTableViewCell: UITableViewCell{
         descriptionLabel.text = agendaData.description
         time.text = agendaData.time
         bigDateLabel.text = agendaData.date
-       
+       //ratings = agendaData.RatingControl
         
     }
     
