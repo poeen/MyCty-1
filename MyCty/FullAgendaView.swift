@@ -51,7 +51,7 @@ class FullAgendaView: UIViewController{
         event.text = eventText
         address.text = addressText
         
-        barView.tintColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        barView.backgroundColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
 
            }
     

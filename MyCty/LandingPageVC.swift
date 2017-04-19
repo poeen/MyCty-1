@@ -25,15 +25,20 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuView: UIView!
     
     
     @IBAction func openMenu(_ sender: Any) {
         
         if (menuShowing){
             leadingConstraint.constant = 0
+             UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
+            })
             
         } else{
             leadingConstraint.constant = 180
+            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
+            })
         }
         menuShowing = !menuShowing
     }
@@ -78,9 +83,10 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         getFacebookUserInfo()
         profilePic.layer.borderWidth = 1
         profilePic.layer.masksToBounds = false
-        
         profilePic.layer.cornerRadius = profilePic.frame.height/2
         profilePic.clipsToBounds = true
+        sideMenuView.layer.shadowOpacity = 1
+        sideMenuView.layer.shadowRadius = 6
         
 
             
