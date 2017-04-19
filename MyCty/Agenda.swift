@@ -67,12 +67,15 @@ class Agenda {
         return _rating
     }
     
-    init(date: String, category: String, time: String, description: String, rating: Int){
+    init(date: String, category: String, time: String, description: String, rating: Int, details: String, cost: String, event: String){
         self._date = date
         self._category = category
         self._time = time
         self._description = description
         self._rating = rating
+        self._details = details
+        self._cost = cost
+        self._event = event
     }
     
     init(key:String, data:Dictionary<String,AnyObject>) {
@@ -114,5 +117,8 @@ class Agenda {
             _event = eventData
         }
         
+        if let detailsData = data["details"] as? String {
+            _details = detailsData
+        }
     }
 }

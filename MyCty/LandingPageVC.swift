@@ -81,7 +81,7 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return agendas.count - 1
+        return agendas.count
     }
     
     
@@ -113,7 +113,10 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 secondVC.timeText = selectedRow.time.text
             secondVC.descriptionText = selectedRow.descriptionLabel.text
             secondVC.dateText = selectedRow.bigDateLabel.text
-    
+            secondVC.detailsText = selectedRow.agenda.details
+            secondVC.costText = selectedRow.agenda.cost
+            secondVC.eventText = selectedRow.agenda.event
+            
                 
             }
         }

@@ -19,13 +19,10 @@ class FullAgendaView: UIViewController{
     
     @IBOutlet weak var category: UILabel!
     
+    @IBOutlet weak var detailsBox: UILabel!
     @IBOutlet weak var cost: UILabel!
     
     @IBOutlet weak var event: UILabel!
-    
-    @IBOutlet weak var descriptionLbl: UILabel!
- 
-    @IBOutlet weak var details: UITextView!
     
     @IBOutlet weak var rating: RatingControl!
    
@@ -36,7 +33,9 @@ class FullAgendaView: UIViewController{
     var timeText: String?
     var dateText: String?
     var descriptionText: String?
-    
+    var detailsText: String?
+    var costText: String?
+    var eventText: String?
     
     
     override func viewDidLoad() {
@@ -44,7 +43,9 @@ class FullAgendaView: UIViewController{
         category.text = categoryText
         time.text = timeText
         date.text = dateText
-        descriptionLbl.text = descriptionText
+        detailsBox.text = detailsText
+        cost.text = costText
+        event.text = eventText
         
 
             //print(category.text)
