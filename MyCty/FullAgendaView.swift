@@ -24,9 +24,11 @@ class FullAgendaView: UIViewController{
     
     @IBOutlet weak var event: UILabel!
     
+    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var rating: RatingControl!
    
-    //var product = DataService.ds.Ref_Agendas.child("Agendas/id")
+    @IBOutlet weak var barView: UIView!
+    
     var categoryText :String?
     var handle :FIRDatabaseHandle?
     var agenda: Agenda!
@@ -36,8 +38,9 @@ class FullAgendaView: UIViewController{
     var detailsText: String?
     var costText: String?
     var eventText: String?
+    var addressText: String?
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         category.text = categoryText
@@ -46,9 +49,10 @@ class FullAgendaView: UIViewController{
         detailsBox.text = detailsText
         cost.text = costText
         event.text = eventText
+        address.text = addressText
         
+        barView.tintColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
 
-            //print(category.text)
-                    // Make our jokes array for the tableView.
-    }
+           }
+    
 }

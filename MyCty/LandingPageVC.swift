@@ -116,6 +116,7 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             secondVC.detailsText = selectedRow.agenda.details
             secondVC.costText = selectedRow.agenda.cost
             secondVC.eventText = selectedRow.agenda.event
+            secondVC.addressText = selectedRow.agenda.location
             
                 
             }

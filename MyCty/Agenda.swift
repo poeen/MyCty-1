@@ -22,12 +22,16 @@ class Agenda {
     private var _userKey:String?
     private var _premium:Bool?
     private var _rating:Int?
+    private var _address:String?
     
     
     var category: String? {
         return _category?.capitalized
     }
     
+    var address: String? {
+        return _address
+    }
     var location: String? {
         return _location
     }
@@ -67,7 +71,7 @@ class Agenda {
         return _rating
     }
     
-    init(date: String, category: String, time: String, description: String, rating: Int, details: String, cost: String, event: String){
+    init(date: String, category: String, time: String, description: String, rating: Int, details: String, cost: String, event: String, address: String, location: String){
         self._date = date
         self._category = category
         self._time = time
@@ -76,6 +80,8 @@ class Agenda {
         self._details = details
         self._cost = cost
         self._event = event
+        self._address = address
+        self._location = location
     }
     
     init(key:String, data:Dictionary<String,AnyObject>) {
@@ -119,6 +125,9 @@ class Agenda {
         
         if let detailsData = data["details"] as? String {
             _details = detailsData
+        }
+        if let locationData = data["address"] as? String {
+            _location = locationData
         }
     }
 }

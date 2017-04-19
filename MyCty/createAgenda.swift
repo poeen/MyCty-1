@@ -63,10 +63,10 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
        
         let userID = FIRAuth.auth()?.currentUser?.uid
     
-        
+        //address and location are being confused together
         let post: Dictionary<String, AnyObject> = [
             
-            "userID": userID as AnyObject  ,"category": categoryTextField.text! as AnyObject, "date": dateTextField.text! as AnyObject, "description": descriptionField.text! as AnyObject, "time": timeTextField.text! as AnyObject, "event": event.text! as AnyObject, "location": locationTextField.text! as AnyObject, "details": details.text as AnyObject, "cost": cost.text as AnyObject
+            "userID": userID as AnyObject  ,"category": categoryTextField.text! as AnyObject, "date": dateTextField.text! as AnyObject, "description": descriptionField.text! as AnyObject, "time": timeTextField.text! as AnyObject, "event": event.text! as AnyObject, "address": locationTextField.text! as AnyObject, "details": details.text as AnyObject, "cost": cost.text as AnyObject
             
         ]
         
@@ -81,6 +81,10 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         timeTextField.text = ""
         dateTextField.text = ""
         event.text = ""
+        locationTextField.text = ""
+        details.text = ""
+        cost.text = ""
+        
         
     }
     override func viewDidLoad() {
