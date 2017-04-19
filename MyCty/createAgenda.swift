@@ -26,8 +26,17 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var details: UITextView!
     
     @IBAction func createAgenda(_ sender: Any) {
+        
+        if categoryTextField.text == "" || descriptionField.text == "" || timeTextField.text == "" || dateTextField.text == "" || locationTextField.text == "" || event.text == "" || cost.text == "" || details.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please complete all the fields", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+        }
       
-        if categoryTextField.text != "" && descriptionField.text != "" && timeTextField.text != "" && dateTextField.text != "" {
+        if categoryTextField.text != "" && descriptionField.text != "" && timeTextField.text != "" && dateTextField.text != "" && locationTextField.text != ""  {
             
             guard let category = categoryTextField.text, category != "" else{
                 print(" UMER: Category must be entered")

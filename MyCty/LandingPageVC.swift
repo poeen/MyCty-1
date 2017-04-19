@@ -10,7 +10,8 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Variables & Oulets
@@ -21,6 +22,8 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var selectedCell = "" as AnyObject
     var menuShowing = false
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
     
@@ -42,7 +45,28 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
    
     
-    
+    func getFacebookUserInfo() {
+        if(FBSDKAccessToken.current() != nil)
+        {
+            //print permissions, such as public_profile
+            print(FBSDKAccessToken.current().permissions)
+            let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
+            let connection = FBSDKGraphRequestConnection()
+            
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                self.nameLabel.text = data["name"] as? String
+                
+                let FBid = data["id"] as? String
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                self.profilePic.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+            })
+            connection.start()
+        }
+    }
     
     
     
@@ -51,6 +75,13 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         super.viewDidLoad()
         myTableView.dataSource = self
         myTableView.delegate = self
+        getFacebookUserInfo()
+        profilePic.layer.borderWidth = 1
+        profilePic.layer.masksToBounds = false
+        
+        profilePic.layer.cornerRadius = profilePic.frame.height/2
+        profilePic.clipsToBounds = true
+        
 
             
         navBar.barTintColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
