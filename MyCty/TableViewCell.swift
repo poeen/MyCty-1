@@ -21,13 +21,7 @@ class MyCustomTableViewCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        /*
-        blueView.layer.cornerRadius = 10
-        smallDateView.layer.borderWidth = 1
-        smallDateView.layer.masksToBounds = false
-        smallDateView.layer.cornerRadius = smallDateView.frame.height/2
-        smallDateView.clipsToBounds = true
- */
+    
         greenView.layer.cornerRadius = 10
     }
     
@@ -37,7 +31,7 @@ class MyCustomTableViewCell: UITableViewCell{
         descriptionLabel.text = agendaData.description
         time.text = agendaData.time
         bigDateLabel.text = agendaData.date
-       //ratings = agendaData.RatingControl
+       
         
     }
     

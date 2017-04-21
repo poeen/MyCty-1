@@ -24,7 +24,10 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var cost: UITextField!
     @IBOutlet weak var details: UITextView!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
+    @IBOutlet weak var createAgendaBtn: UIButton!
     @IBAction func createAgenda(_ sender: Any) {
         
         if categoryTextField.text == "" || descriptionField.text == "" || timeTextField.text == "" || dateTextField.text == "" || locationTextField.text == "" || event.text == "" || cost.text == "" || details.text == "" {
@@ -61,7 +64,9 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         self.postToFirebase()
            
         }
-        self.performSegue(withIdentifier: "backToLand", sender: self)
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
+        self.present(vc, animated: true, completion: nil)
+
     }
     
  
@@ -94,22 +99,29 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         details.text = ""
         cost.text = ""
         
-        
     }
+    
+    @IBAction func back(_ sender: Any) {
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
+        self.present(vc, animated: true, completion: nil)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
   
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
               view.addGestureRecognizer(tap)
+        createAgendaBtn.layer.cornerRadius = 10
     }
     
        func dismissKeyboard() {
         view.endEditing(true)
     }
     
+
+
 }
-
-
 
 
 

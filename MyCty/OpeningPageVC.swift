@@ -148,7 +148,7 @@ class OpeningViewController : UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){// stringForKey(Key_UID) {
             print("Umer: ID found in Keychain")
-            let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "LandingPageVC")
+            let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
             self.present(vc, animated: true, completion: nil)
             
         }

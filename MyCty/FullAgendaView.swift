@@ -39,6 +39,7 @@ class FullAgendaView: UIViewController{
     var costText: String?
     var eventText: String?
     var addressText: String?
+    var ratingNumber: Int?
     
    
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class FullAgendaView: UIViewController{
         cost.text = costText
         event.text = eventText
         address.text = addressText
+        ratingNumber = rating.rating
         
         barView.backgroundColor = UIColor(red: 132.0/255.0, green: 36.0/255.0, blue: 42.0/255.0, alpha: 1.0)
 

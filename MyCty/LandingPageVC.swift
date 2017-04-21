@@ -42,13 +42,13 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
         menuShowing = !menuShowing
     }
-    
- 
-    @IBAction func switchToCreate(_ sender: Any) {
+
+    @IBAction func sendToCreate(_ sender: Any) {
         let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "AgendaDetailVC")
         self.present(vc, animated: true, completion: nil)
     }
-   
+    
+ 
     
     func getFacebookUserInfo() {
         if(FBSDKAccessToken.current() != nil)
@@ -154,6 +154,7 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             secondVC.costText = selectedRow.agenda.cost
             secondVC.eventText = selectedRow.agenda.event
             secondVC.addressText = selectedRow.agenda.location
+            secondVC.ratingNumber = selectedRow.ratings.rating
             
                 
             }
