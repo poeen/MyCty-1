@@ -35,12 +35,12 @@
 		745EBD761E8359CB0022664D /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745EBD751E8359CB0022664D /* LandingPageVC.swift */; };
 		7489B3EC1E7DF31A00DFAFC9 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489B3EB1E7DF31A00DFAFC9 /* Onboarding.swift */; };
 		7489B3EF1E80F18B00DFAFC9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7489B3EE1E80F18B00DFAFC9 /* Home.storyboard */; };
-		748E315C1E750B5500911071 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E315B1E750B5500911071 /* HomePageController.swift */; };
 		748E315E1E7642BA00911071 /* forgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E315D1E7642BA00911071 /* forgotPasswordController.swift */; };
 		748E31601E764E8200911071 /* termsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E315F1E764E8200911071 /* termsViewController.swift */; };
 		74DD65141E838FF800697175 /* createAgenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD65131E838FF800697175 /* createAgenda.swift */; };
 		74DD651E1E873B3D00697175 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD651D1E873B3D00697175 /* Agenda.swift */; };
 		74DD65841E93278200697175 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74DD65831E93278200697175 /* GoogleService-Info.plist */; };
+		74E3FB631EAA588B00CA98F6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E3FB621EAA588B00CA98F6 /* ProfileView.swift */; };
 		74ED89E81E970A8200B3B953 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED89E71E970A8200B3B953 /* Constants.swift */; };
 		74ED89F31E9F192000B3B953 /* FullAgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED89F21E9F192000B3B953 /* FullAgendaView.swift */; };
 		74ED89F51EA4331E00B3B953 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED89F41EA4331E00B3B953 /* RatingControl.swift */; };
@@ -49,7 +49,6 @@
 		74F1A82A1E74EE3E00EA0188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8281E74EE3E00EA0188 /* LaunchScreen.storyboard */; };
 		74F1A8341E74EFB800EA0188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8331E74EFB800EA0188 /* Main.storyboard */; };
 		74F1A8361E74EFDB00EA0188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A8351E74EFDB00EA0188 /* ViewController.swift */; };
-		74F1A8381E74EFE300EA0188 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A8371E74EFE300EA0188 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +81,12 @@
 		745EBD751E8359CB0022664D /* LandingPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		7489B3EB1E7DF31A00DFAFC9 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		7489B3EE1E80F18B00DFAFC9 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		748E315B1E750B5500911071 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		748E315D1E7642BA00911071 /* forgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgotPasswordController.swift; sourceTree = "<group>"; };
 		748E315F1E764E8200911071 /* termsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = termsViewController.swift; sourceTree = "<group>"; };
 		74DD65131E838FF800697175 /* createAgenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAgenda.swift; sourceTree = "<group>"; };
 		74DD651D1E873B3D00697175 /* Agenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
 		74DD65831E93278200697175 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		74E3FB621EAA588B00CA98F6 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		74ED89E71E970A8200B3B953 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		74ED89F21E9F192000B3B953 /* FullAgendaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAgendaView.swift; sourceTree = "<group>"; };
 		74ED89F41EA4331E00B3B953 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 		74F1A82B1E74EE3E00EA0188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F1A8331E74EFB800EA0188 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		74F1A8351E74EFDB00EA0188 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		74F1A8371E74EFE300EA0188 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A7B5BF96DC3E69C16C4A726E /* Pods_MyCty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CE0ECE2263BE69049C7974 /* Pods-MyCty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCty.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCty/Pods-MyCty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +201,7 @@
 				745EBD751E8359CB0022664D /* LandingPageVC.swift */,
 				23ED4D5B1E95E44F00718FE5 /* DataService.swift */,
 				74ED89F21E9F192000B3B953 /* FullAgendaView.swift */,
+				74E3FB611EAA586200CA98F6 /* Other Views */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -216,15 +215,21 @@
 				74F1A8261E74EE3E00EA0188 /* Assets.xcassets */,
 				741C90021E7A553600E0EC3D /* IQKeyboardManagerSwift */,
 				74F1A8281E74EE3E00EA0188 /* LaunchScreen.storyboard */,
-				74F1A8371E74EFE300EA0188 /* LoginViewController.swift */,
 				74DD65831E93278200697175 /* GoogleService-Info.plist */,
 				74F1A82B1E74EE3E00EA0188 /* Info.plist */,
-				748E315B1E750B5500911071 /* HomePageController.swift */,
 				748E315D1E7642BA00911071 /* forgotPasswordController.swift */,
 				748E315F1E764E8200911071 /* termsViewController.swift */,
 				741C90001E7A213400E0EC3D /* OpeningPageVC.swift */,
 			);
 			name = SignUp/Login;
+			sourceTree = "<group>";
+		};
+		74E3FB611EAA586200CA98F6 /* Other Views */ = {
+			isa = PBXGroup;
+			children = (
+				74E3FB621EAA588B00CA98F6 /* ProfileView.swift */,
+			);
+			name = "Other Views";
 			sourceTree = "<group>";
 		};
 		74ED89E61E970A6C00B3B953 /* Util */ = {
@@ -423,15 +428,14 @@
 				748E31601E764E8200911071 /* termsViewController.swift in Sources */,
 				741C90221E7A553600E0EC3D /* IQKeyboardManager.swift in Sources */,
 				742C5C541E79EEE800553161 /* OnBoardingVC.swift in Sources */,
+				74E3FB631EAA588B00CA98F6 /* ProfileView.swift in Sources */,
 				741C90271E7A553600E0EC3D /* IQTitleBarButtonItem.swift in Sources */,
 				7489B3EC1E7DF31A00DFAFC9 /* Onboarding.swift in Sources */,
 				741C90251E7A553600E0EC3D /* IQBarButtonItem.swift in Sources */,
-				74F1A8381E74EFE300EA0188 /* LoginViewController.swift in Sources */,
 				74ED89F51EA4331E00B3B953 /* RatingControl.swift in Sources */,
 				741C90291E7A553600E0EC3D /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				74DD65141E838FF800697175 /* createAgenda.swift in Sources */,
 				741C901D1E7A553600E0EC3D /* IQUIView+Hierarchy.swift in Sources */,
-				748E315C1E750B5500911071 /* HomePageController.swift in Sources */,
 				741C901A1E7A553600E0EC3D /* IQNSArray+Sort.swift in Sources */,
 				741C901E1E7A553600E0EC3D /* IQUIViewController+Additions.swift in Sources */,
 				741C90201E7A553600E0EC3D /* IQKeyboardManagerConstants.swift in Sources */,

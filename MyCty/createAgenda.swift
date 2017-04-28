@@ -101,12 +101,7 @@ class AgendaDetailVC: UIViewController, UITextFieldDelegate{
         
     }
     
-    @IBAction func back(_ sender: Any) {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
-        self.present(vc, animated: true, completion: nil)
-
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
   

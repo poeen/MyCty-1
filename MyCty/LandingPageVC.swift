@@ -43,11 +43,11 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         menuShowing = !menuShowing
     }
 
-    @IBAction func sendToCreate(_ sender: Any) {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "AgendaDetailVC")
+    //@IBAction func sendToCreate(_ sender: Any) {
+      /*  let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "AgendaDetailVC")
         self.present(vc, animated: true, completion: nil)
     }
-    
+    */
  
     
     func getFacebookUserInfo() {
@@ -103,13 +103,12 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                         let post = Agenda(key: key, data: agendasDict)
                         //if let data = agendasDict[self.testingKey] as? Dictionary<String,AnyObject> {
                         self.agendas.append(post)
-                        
-                        }
                     }
                 }
-            self.myTableView.reloadData()
             }
-        )}
+            self.myTableView.reloadData()
+        })
+    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,23 +139,22 @@ class LandingPageVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let rowIndex: NSIndexPath = myTableView.indexPathForSelectedRow! as NSIndexPath
-        let selectedRow: MyCustomTableViewCell = myTableView.cellForRow(at: rowIndex as IndexPath)! as! MyCustomTableViewCell
         //let contentFromSelectedRow: String = selectedRow.textLabel!.text!
         
         if let secondVC = segue.destination as? FullAgendaView {
             if segue.identifier == "Preview" {
-            secondVC.categoryText = selectedRow.categoryLabel.text
-                secondVC.timeText = selectedRow.time.text
-            secondVC.descriptionText = selectedRow.descriptionLabel.text
-            secondVC.dateText = selectedRow.bigDateLabel.text
-            secondVC.detailsText = selectedRow.agenda.details
-            secondVC.costText = selectedRow.agenda.cost
-            secondVC.eventText = selectedRow.agenda.event
-            secondVC.addressText = selectedRow.agenda.location
-            secondVC.ratingNumber = selectedRow.ratings.rating
-            
+                let rowIndex: NSIndexPath = myTableView.indexPathForSelectedRow! as NSIndexPath
+                let selectedRow: MyCustomTableViewCell = myTableView.cellForRow(at: rowIndex as IndexPath)! as! MyCustomTableViewCell
                 
+                secondVC.categoryText = selectedRow.categoryLabel.text
+                secondVC.timeText = selectedRow.time.text
+                secondVC.descriptionText = selectedRow.descriptionLabel.text
+                secondVC.dateText = selectedRow.bigDateLabel.text
+                secondVC.detailsText = selectedRow.agenda.details
+                secondVC.costText = selectedRow.agenda.cost
+                secondVC.eventText = selectedRow.agenda.event
+                secondVC.addressText = selectedRow.agenda.location
+                secondVC.ratingNumber = selectedRow.ratings.rating
             }
         }
     }

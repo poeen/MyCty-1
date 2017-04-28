@@ -50,7 +50,7 @@ class OpeningViewController : UIViewController{
                 print("Umer: Successfully authenticated with Facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
-                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "LandingPageVC")
+                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
                 self.present(vc, animated: true, completion: nil)
 
             }
@@ -112,7 +112,7 @@ class OpeningViewController : UIViewController{
     private func completeSignIn(id: String) {
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID) //.setString
         print("umer: Data saved to keychain \(keychainResult)")
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "LandingPageVC")
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
         self.present(vc, animated: true, completion: nil)
         /*
          DataService.ds.createFBDBUser(uid, userData: userData)
@@ -150,8 +150,8 @@ class OpeningViewController : UIViewController{
             print("Umer: ID found in Keychain")
             let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainToTab")
             self.present(vc, animated: true, completion: nil)
-            
         }
+            
     }
     
     
